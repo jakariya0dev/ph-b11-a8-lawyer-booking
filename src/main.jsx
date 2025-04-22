@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -9,6 +9,7 @@ import {
 } from "react-router";
 import Root from './components/Root.jsx';
 import Home from './pages/Home.jsx';
+import Profile from './pages/Profile.jsx';
 
 
 const router = createBrowserRouter([
@@ -23,12 +24,16 @@ const router = createBrowserRouter([
         loader: () => fetch('public/lawyers-data.json'),
         Component: Home,
       },
+      {
+        path: "profile/:id",
+        Component: Profile,
+      },
     ],
   },
 ]);
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <Suspense fallback={<div>Loading...</div>}>
     <RouterProvider router={router} />
-  </StrictMode>
+  </Suspense>
 )

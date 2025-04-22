@@ -10,7 +10,7 @@ export default function Footer() {
     return (
         <div className='flex flex-col justify-center items-center bg-black text-white py-10 md:py-20'>
             <div className='flex items-center mb-5 gap-3 font-bold text-2xl'>
-                <img src="public/img/logo-footer.png" className="logo" alt="logo" />Law.BD
+                <img src="/img/logo-footer.png" className="logo" alt="logo" />Law.BD
             </div>
             <div className='flex flex-col md:flex-row justify-center items-center gap-5'>
                 <Link to="/" className="">Home</Link>

@@ -41,12 +41,11 @@ export default function Lawyers({lawyers}) {
                                 <h3 className='text-xl font-bold'>{lawyer.name}</h3>
                                 <p className='text-sm'>{lawyer.expertise}</p>
                                 <p className='text-sm flex items-center gap-1 mb-4'><FaRegRegistered /> License No: {lawyer.license}</p>
-                                <Link className='border border-slate-400 px-3 py-1 rounded-full w-full text-center text-blue-600 inline-block'>View Details</Link>
+                                <Link to={`profile/${lawyer.id}`} className='border border-slate-400 px-3 py-1 rounded-full w-full text-center text-blue-600 inline-block'>View Details</Link>
                             </div>
                         </div>
-                        ))}
-
-
+                        ))
+                    }
                     
                 </div>
             </div>
