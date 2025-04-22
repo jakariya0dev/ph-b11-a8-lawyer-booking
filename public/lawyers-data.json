@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Awlad Hossain",
+    "experience": "5+ Years Experience",
+    "expertise": "Criminal Expert",
+    "license": "BD 12451254",
+    "availability": ["Sunday", "Monday", "Thursday"],
+    "fee": 273,
+    "image": "https://i.pravatar.cc/300?u=BD12451254"
+  },
+  {
+    "name": "Fatima Akter",
+    "experience": "7+ Years Experience",
+    "expertise": "Family Law Expert",
+    "license": "BD 15478963",
+    "availability": ["Saturday", "Tuesday", "Thursday"],
+    "fee": 300,
+    "image": "https://i.pravatar.cc/300?u=BD15478963"
+  },
+  {
+    "name": "Raihan Kabir",
+    "experience": "3+ Years Experience",
+    "expertise": "Civil Law Expert",
+    "license": "BD 11896541",
+    "availability": ["Monday", "Wednesday"],
+    "fee": 250,
+    "image": "https://i.pravatar.cc/300?u=BD11896541"
+  },
+  {
+    "name": "Jannatul Ferdous",
+    "experience": "6+ Years Experience",
+    "expertise": "Corporate Lawyer",
+    "license": "BD 13472859",
+    "availability": ["Sunday", "Wednesday", "Friday"],
+    "fee": 320,
+    "image": "https://i.pravatar.cc/300?u=BD13472859"
+  },
+  {
+    "name": "Shahriar Ahmed",
+    "experience": "4+ Years Experience",
+    "expertise": "Labor Law Specialist",
+    "license": "BD 19387452",
+    "availability": ["Monday", "Tuesday"],
+    "fee": 265,
+    "image": "https://i.pravatar.cc/300?u=BD19387452"
+  },
+  {
+    "name": "Tahmina Sultana",
+    "experience": "10+ Years Experience",
+    "expertise": "Immigration Lawyer",
+    "license": "BD 10485731",
+    "availability": ["Wednesday", "Thursday", "Saturday"],
+    "fee": 400,
+    "image": "https://i.pravatar.cc/300?u=BD10485731"
+  },
+  {
+    "name": "Mehedi Hasan",
+    "experience": "2+ Years Experience",
+    "expertise": "Tax Consultant",
+    "license": "BD 18743526",
+    "availability": ["Sunday", "Tuesday"],
+    "fee": 200,
+    "image": "https://i.pravatar.cc/300?u=BD18743526"
+  },
+  {
+    "name": "Sabina Yasmin",
+    "experience": "8+ Years Experience",
+    "expertise": "Criminal Defense Lawyer",
+    "license": "BD 19874325",
+    "availability": ["Saturday", "Monday", "Thursday"],
+    "fee": 350,
+    "image": "https://i.pravatar.cc/300?u=BD19874325"
+  },
+  {
+    "name": "Tariq Mahmud",
+    "experience": "9+ Years Experience",
+    "expertise": "Human Rights Lawyer",
+    "license": "BD 17654321",
+    "availability": ["Sunday", "Wednesday"],
+    "fee": 375,
+    "image": "https://i.pravatar.cc/300?u=BD17654321"
+  },
+  {
+    "name": "Nadia Islam",
+    "experience": "6+ Years Experience",
+    "expertise": "Corporate & Commercial Lawyer",
+    "license": "BD 11235678",
+    "availability": ["Tuesday", "Thursday"],
+    "fee": 330,
+    "image": "https://i.pravatar.cc/300?u=BD11235678"
+  },
+  {
+    "name": "Zahidul Islam",
+    "experience": "5+ Years Experience",
+    "expertise": "Property Law Expert",
+    "license": "BD 14253678",
+    "availability": ["Monday", "Friday"],
+    "fee": 280,
+    "image": "https://i.pravatar.cc/300?u=BD14253678"
+  },
+  {
+    "name": "Farzana Haque",
+    "experience": "7+ Years Experience",
+    "expertise": "Family & Divorce Lawyer",
+    "license": "BD 19087654",
+    "availability": ["Sunday", "Tuesday", "Friday"],
+    "fee": 310,
+    "image": "https://i.pravatar.cc/300?u=BD19087654"
+  }
+]
