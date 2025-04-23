@@ -1,6 +1,7 @@
 import React, {useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
+import NoBooking from '../components/NoBooking';
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
@@ -50,26 +51,33 @@ export default function Booking() {
 
     return (
         <div className='bg-white py-5 w-10/12 mx-auto'>
-            <BarChart
-                width={1000}
-                height={400}
-                data={bookedLawyers}
-                margin={{top: 20, right: 30, left: 20, bottom: 50,}}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis dataKey="fee" />
-                <Bar dataKey="fee" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-                    {
-                        bookedLawyers.map((entry, index) => (<Cell key={`cell-${index}`} fill={colors[index % 20]} />))
-                    }
-                </Bar>
-            </BarChart>
             
-            <h2 className='text-slate-600 text-3xl font-bold text-center mb-2'>My Today Appointments</h2>
-            <p className='mb-10 text-slate-600 text-center text-sm'>Our platform connects you with verified, experienced Lawyers across various specialties — all at your convenience.</p>
+            {
+                bookedLawyers.length === 0 ? '' : 
+                <BarChart
+                    width={1000}
+                    height={400}
+                    data={bookedLawyers}
+                    margin={{top: 20, right: 30, left: 20, bottom: 50,}}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis dataKey="fee" />
+                    <Bar dataKey="fee" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+                        {
+                            bookedLawyers.map((entry, index) => (<Cell key={`cell-${index}`} fill={colors[index % 20]} />))
+                        }
+                    </Bar>
+                </BarChart>
+            }
+            
+            <div className='my-5'>
+                <h2 className='text-slate-600 text-3xl font-bold text-center mb-2'>My Today Appointments</h2>
+                <p className='mb-10 text-slate-600 text-center text-sm'>Our platform connects you with verified, experienced Lawyers across various specialties — all at your convenience.</p>
+            </div>
 
             <div className='grid grid-cols-1 gap-5'>
-                {bookedLawyers.map((lawyer) => (
+                {
+                    bookedLawyers.length > 0 ? (bookedLawyers.map((lawyer) => (
                         <div
                             key={lawyer.license}
                             className='text-slate-600 shadow rounded-lg p-5 border border-slate-300 gap-5'>
@@ -87,9 +95,9 @@ export default function Booking() {
                                 
                             </div>
 
-                            <button onClick={() => handleCancelAppointment(lawyer.id)} className='border border-slate-300 text-red-600 pt-1 pb-2 text-sm w-full rounded-full mt-4 transition-all hover:bg-red-600 hover:text-white'>Cancel Appoinment</button>
+                            <button onClick={() => handleCancelAppointment(lawyer.id)} className='border border-slate-400 text-red-600 pt-1 pb-2 text-sm w-full rounded-full mt-4 transition-all hover:bg-red-600 hover:text-white'>Cancel Appoinment</button>
                         </div>
-                    ))
+                    ))) : <NoBooking />
                 }
             </div>
         </div>
