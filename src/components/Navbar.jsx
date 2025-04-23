@@ -35,7 +35,7 @@ export default function Navbar() {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to="/contact" className="btn bg-amber-400 rounded-full border-0">Contact now</Link>
+                    <Link to="/contact" className="btn bg-amber-400 rounded-full border-0 hover:bg-amber-500 transition-all">Contact now</Link>
                 </div>
             </div>
         </nav>

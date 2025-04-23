@@ -25,12 +25,14 @@ export default function Lawyers({lawyers}) {
                     {visibleLawyers.map((lawyer) => (
                         <div
                             key={lawyer.license}
-                            className='flex items-start justify-start text-slate-600 shadow rounded-lg p-5 border border-slate-300 gap-5 mb-4'>
-                            <img
-                                src={lawyer.image}
-                                alt={lawyer.name}
-                                className='w-24 h-24 rounded-full object-cover'
-                            />
+                            className='flex items-stretch justify-start text-slate-600 shadow rounded-lg p-5 border border-slate-300 gap-5'>
+                            <div className='bg-slate-200 rounded-lg p-10 flex items-center justify-center'>
+                                <img
+                                    src={lawyer.image}
+                                    alt={lawyer.name}
+                                    className='w-24 h-24 rounded-full object-cover'
+                                />
+                            </div>
                             <div>
                                 <div className='flex flex-wrap gap-2 mb-2'>
                                 

@@ -52,7 +52,7 @@ export default function Booking() {
     };
 
     return (
-        <div className='bg-white py-5 w-10/12 mx-auto'>
+        <div className='py-20 w-10/12 mx-auto'>
             
             {
                 bookedLawyers.length === 0 ? '' : 

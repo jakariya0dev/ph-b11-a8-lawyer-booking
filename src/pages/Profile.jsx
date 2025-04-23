@@ -46,7 +46,7 @@ export default function Profile() {
 
 
     return (
-        <div className='bg-white py-5 w-10/12 mx-auto'>
+        <div className='py-5 w-10/12 mx-auto'>
 
             <div className='bg-slate-200 py-5 rounded mb-5'>
                 <div className='text-center  text-slate-600 py-20 w-10/12 mx-auto'>
@@ -56,15 +56,16 @@ export default function Profile() {
                 
             </div>
 
-            <div className='p-5 bg-white rounded-lg border border-slate-300'>
+            <div className='p-5 bg-white rounded-lg'>
                 <div
                     key={lawyer.license}
-                    className='flex items-start justify-start text-slate-600 rounded-lg p-5 border border-slate-300 gap-5'>
-                    <img
-                        src={lawyer.image}
-                        alt={lawyer.name}
-                        className='w-24 h-24 rounded-full object-cover'
-                    />
+                    className='flex items-stretch justify-start text-slate-600 rounded-lg p-5 border border-slate-300 gap-5'>
+                    <div className='bg-slate-200 p-10 rounded-2xl flex items-center justify-center'>
+                        <img
+                            src={lawyer.image}
+                            alt={lawyer.name}
+                            className='w-24 h-24 rounded-full object-cover'/>
+                    </div>
                     <div>
                         <p className='text-blue-600 px-3 py-1 text-xs bg-blue-100 rounded-full inline-block mb-4'>
                             {lawyer.experience}
@@ -83,14 +84,14 @@ export default function Profile() {
                 </div>
             </div>
 
-            <div className='shadow rounded-lg border border-slate-300 mt-5 p-5'>
-                <h3 className='text-slate-600 text-center text-xl font-bold mb-4'>Book an Appointment</h3>
+            <div className='bg-white rounded-lg mt-5 p-5'>
+                <h3 className='text-slate-600 text-center text-xl font-bold mb-5'>Book an Appointment</h3>
                 <div className='divider border-b-2 border-dashed border-amber-200'></div>
-                <div className='flex items-center justify-between mb-4'>
+                <div className='flex items-center justify-between mb-5'>
                     <p className='text-slate-600 font-bold'>Available</p>
                     <p className='text-green-600 bg-green-100 px-3 py-1 rounded-full text-xs'>Lawyer Available Today</p>
                 </div>
-                <p className='text-amber-500 mb-4 bg-amber-100 p-2 rounded-lg text-sm flex items-center gap-1'>
+                <p className='text-amber-500 mb-5 bg-amber-100 p-2 rounded-lg text-sm flex items-center gap-1'>
                     <CiSquareAlert />
                     Due to high patient volume, we are currently accepting appointments for today only. We appreciate your understanding and cooperation.
                 </p>   
