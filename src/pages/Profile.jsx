@@ -55,15 +55,16 @@ export default function Profile() {
             </div>
 
             <div className='p-5 bg-white rounded-lg'>
-                <div
-                    key={lawyer.license}
-                    className='flex items-stretch justify-start text-slate-600 rounded-lg p-5 border border-slate-300 gap-5'>
+                <div key={lawyer.license}
+                    className='flex flex-col md:flex-row items-stretch justify-start text-slate-600 rounded-lg p-5 border border-slate-300 gap-5'>
+
                     <div className='bg-slate-200 p-10 rounded-2xl flex items-center justify-center'>
                         <img
                             src={lawyer.image}
                             alt={lawyer.name}
                             className='w-24 h-24 rounded-full object-cover'/>
                     </div>
+
                     <div>
                         <p className='text-blue-600 px-3 py-1 text-xs bg-blue-100 rounded-full inline-block mb-4'>
                             {lawyer.experience}

@@ -1,6 +1,6 @@
 import React, {useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
 import NoBooking from '../components/NoBooking';
 import { toast } from 'react-toastify';
 
@@ -55,20 +55,21 @@ export default function Booking() {
             
             {
                 bookedLawyers.length === 0 ? '' : 
-                <BarChart
-                    width={1000}
-                    height={400}
-                    data={bookedLawyers}
-                    margin={{top: 20, right: 30, left: 20, bottom: 50,}}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis dataKey="fee" />
-                    <Bar dataKey="fee" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-                        {
-                            bookedLawyers.map((entry, index) => (<Cell key={`cell-${index}`} fill={colors[index % 20]} />))
-                        }
-                    </Bar>
-                </BarChart>
+                <ResponsiveContainer width="100%" height={400} className='mx-auto'>
+                    <BarChart
+                        data={bookedLawyers}
+                        margin={{top: 20, right: 30, left: 20, bottom: 50,}}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="name" />
+                        <YAxis dataKey="fee" />
+                        <Bar dataKey="fee" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+                            {
+                                bookedLawyers.map((entry, index) => (<Cell key={`cell-${index}`} fill={colors[index % 20]} />))
+                            }
+                        </Bar>
+                    </BarChart>
+                </ResponsiveContainer>
+                
             }
             
             <div className='my-5'>
