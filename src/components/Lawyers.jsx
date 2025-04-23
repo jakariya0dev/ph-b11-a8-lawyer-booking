@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaRegRegistered } from "react-icons/fa";
 import { Link } from 'react-router';
 
 
 export default function Lawyers({lawyers}) {
 
-    console.log(lawyers);
+      const [showAll, setShowAll] = useState(false);
+
+    const half = Math.ceil(lawyers.length / 2);
+    const visibleLawyers = showAll ? lawyers : lawyers.slice(0, half);
+
+    // console.log(lawyers);
     
     return (
         <div className='bg-slate-100 py-16 w-10/12 mx-auto'>
@@ -17,7 +22,7 @@ export default function Lawyers({lawyers}) {
             <div>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
 
-                    {lawyers.map((lawyer) => (
+                    {visibleLawyers.map((lawyer) => (
                         <div
                             key={lawyer.license}
                             className='flex items-start justify-start text-slate-600 shadow rounded-lg p-5 border border-slate-300 gap-5 mb-4'>
@@ -48,6 +53,9 @@ export default function Lawyers({lawyers}) {
                     }
                     
                 </div>
+            </div>
+            <div className='text-center mt-5'>
+                <a onClick={() => setShowAll(!showAll)} className="btn bg-green-600 rounded-full border-0">{showAll ? 'Show Less' : 'Show All Lawyers'}</a>
             </div>
         </div>
     )
