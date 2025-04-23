@@ -8,7 +8,7 @@ export default function Blogs() {
     return (
         <div>
             <div className="w-10/12 mx-auto py-4">
-                <h1 className="text-3xl font-bold mb-6 text-center">React FAQ</h1>
+                <h1 className="text-3xl font-bold mb-6 text-center text-slate-600 my-10">React FAQ</h1>
                 <div className="space-y-6">
                     {blogs.map((item, index) => (
                     <div key={index} className="p-4 border border-gray-300 rounded-2xl shadow-md hover:shadow-lg transition-shadow">

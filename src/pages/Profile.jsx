@@ -29,9 +29,14 @@ export default function Profile() {
         if (lawyersId.includes(lawyer.id)) {
             toast("Already booked an appointment with this lawyer!");
         } else {
+
             const newLawyersId = [...lawyersId, lawyer.id];
+            // store the new lawyersId in local storage
             localStorage.setItem('lawyersId', JSON.stringify(newLawyersId));
-            toast("Appointment booked successfully.");;
+            // show success message
+            toast("Appointment booked successfully.");
+            // goto booking page
+            window.location.href = '/booking';
         }
     }
 

@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router'
+import { Link, NavLink, useLocation } from 'react-router'
 
 export default function Navbar() {
+
+    const location = useLocation();
 
     const links = (
                     <>
@@ -12,8 +14,8 @@ export default function Navbar() {
                     </>
                 );
     return (
-        <nav className='w-10/12 mx-auto'>
-            <div className="navbar bg-slate-100 text-slate-600 shadow-sm">
+        <nav className={location.pathname !== "/" ? "shadow" : ""}>
+            <div className="navbar bg-slate-100 text-slate-600 w-10/12 mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,7 +35,7 @@ export default function Navbar() {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn bg-amber-400 rounded-full border-0">Contact now</a>
+                    <Link to="/contact" className="btn bg-amber-400 rounded-full border-0">Contact now</Link>
                 </div>
             </div>
         </nav>

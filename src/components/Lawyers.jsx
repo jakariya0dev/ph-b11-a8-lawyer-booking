@@ -38,15 +38,17 @@ export default function Lawyers({lawyers}) {
                                         {lawyer.availability ? 'Available' : 'Not Available'}
                                     </p>
 
-                                    <p className='text-red-600 px-3 py-1 text-xs bg-slate-200 rounded-full'>
+                                    <p className='text-red-600 px-3 py-1  text-xs bg-slate-200 rounded-full'>
                                         {lawyer.expertise}
                                     </p>
                                 
                                 </div>
-                                <h3 className='text-xl font-bold'>{lawyer.name}</h3>
-                                <p className='text-sm'>{lawyer.expertise}</p>
+                                <h3 className='text-xl font-bold mb-2'>{lawyer.name}</h3>
+                                <p className='text-sm mb-2'>{lawyer.expertise}</p>
                                 <p className='text-sm flex items-center gap-1 mb-4'><FaRegRegistered /> License No: {lawyer.license}</p>
-                                <Link to={`profile/${lawyer.id}`} className='border border-slate-400 px-3 py-1 rounded-full w-full text-center text-blue-600 inline-block'>View Details</Link>
+                                <Link to={`profile/${lawyer.id}`} className='border border-slate-400 px-3 pb-2 pt-1 rounded-full w-full text-center text-blue-600 inline-block hover:bg-blue-600 hover:text-white transition-all'>   
+                                    View Details
+                                </Link>
                             </div>
                         </div>
                         ))
@@ -55,7 +57,7 @@ export default function Lawyers({lawyers}) {
                 </div>
             </div>
             <div className='text-center mt-5'>
-                <a onClick={() => setShowAll(!showAll)} className="btn bg-green-600 rounded-full border-0">{showAll ? 'Show Less' : 'Show All Lawyers'}</a>
+                <a onClick={() => setShowAll(!showAll)} className="btn bg-green-600 rounded-full border-0 px-10 hover:bg-green-700">{showAll ? 'Show Less' : 'Show All Lawyers'}</a>
             </div>
         </div>
     )
