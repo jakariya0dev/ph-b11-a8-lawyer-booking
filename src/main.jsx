@@ -14,39 +14,44 @@ import Booking from './pages/Booking.jsx';
 import Blogs from './pages/Blogs.jsx';
 
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    Component: Root,
-    errorElement: <div>error</div>,
-    children: [
-      {
-        index: true,
-        path: "/",
-        loader: () => fetch('public/lawyers-data.json'),
-        Component: Home,
-      },
-      {
-        path: "profile/:id",
-        Component: Profile,
-      },
-      {
-        loader: () => fetch('/lawyers-data.json'),
-        path: "booking",
-        element: <Booking />,
-      },
-      {
-        path: "blogs",
-        element: <Blogs />,
-        loader: () => fetch('/blogs-data.json'),
-      },
-      {
-        path: "*",
-        Component: () => <div>404</div>,
-      }
-    ],
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      Component: Root,
+      children: [
+        {
+          index: true,
+          path: "/",
+          loader: () => fetch('public/lawyers-data.json'),
+          Component: Home,
+        },
+        {
+          path: "profile/:id",
+          Component: Profile,
+        },
+        {
+          loader: () => fetch('/lawyers-data.json'),
+          path: "booking",
+          element: <Booking />,
+        },
+        {
+          path: "blogs",
+          element: <Blogs />,
+          loader: () => fetch('/blogs-data.json'),
+        },
+        {
+          path: "*",
+          element: <Error />
+        }
+      ],
+    },
+    {
+      path: "*",
+      element: <Error />
+    }
+  ]
+);
 
 createRoot(document.getElementById('root')).render(
   <Suspense fallback={<div>Loading...</div>}>

@@ -1,14 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router'
+import { Link, NavLink } from 'react-router'
 
 export default function Navbar() {
 
     const links = (
                     <>
-                        <Link to="/" className="">Home</Link>
-                        <Link to="/" className="">My Bookings</Link>
-                        <Link to="/" className="">Blogs</Link>
-                        <Link to="/" className="">Contact Us</Link>
+                        <NavLink to="/" className={({isActive}) => isActive ? "border-b-2 border-red-600" : ""}>Home</NavLink>
+                        <NavLink to="/booking" className={({isActive}) => isActive ? "border-b-2 border-red-600" : ""}>My Bookings</NavLink>
+                        <NavLink to="/blogs" className={({isActive}) => isActive ? "border-b-2 border-red-600" : ""}>Blogs</NavLink>
+                        <NavLink to="/contact" className={({isActive}) => isActive ? "border-b-2 border-red-600" : ""}>Contact Us</NavLink>
                     </>
                 );
     return (
@@ -25,7 +25,7 @@ export default function Navbar() {
                         {links}
                     </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl"><img src="./../img/logo.png" alt="logo" className='w-8' />Law.BD</a>
+                    <Link to="/" className="btn btn-ghost text-xl"><img src="img/logo.png" alt="logo" className='w-8' />Law.BD</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex ">
                     <ul className="menu menu-horizontal px-1 gap-5">
