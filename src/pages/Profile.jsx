@@ -7,9 +7,6 @@ import { toast } from 'react-toastify';
 export default function Profile() {
 
     const [lawyer, setLawyer] = useState({});
-
-    // let lawyer = useLoaderData()
-    // console.log(lawyer);
     let {id} = useParams();
     
     useEffect(() => {
@@ -21,7 +18,6 @@ export default function Profile() {
         })
     }, [id]);
     
-    console.log(lawyer.availability);
     
     function handleClickAppointment(lawyer) {
         
