@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FaRegRegistered } from 'react-icons/fa6';
 import { useParams } from 'react-router'
 import { CiSquareAlert } from "react-icons/ci";
+import { toast } from 'react-toastify';
 
 export default function Profile() {
 
@@ -26,11 +27,11 @@ export default function Profile() {
         const lawyersId = stored ? JSON.parse(stored) : [];
 
         if (lawyersId.includes(lawyer.id)) {
-            alert('You have already booked an appointment with this lawyer.');
+            toast("Already booked an appointment with this lawyer!");
         } else {
             const newLawyersId = [...lawyersId, lawyer.id];
             localStorage.setItem('lawyersId', JSON.stringify(newLawyersId));
-            alert('Appointment booked successfully.');
+            toast("Appointment booked successfully.");;
         }
     }
 

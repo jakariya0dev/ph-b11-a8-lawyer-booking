@@ -2,6 +2,7 @@ import React, {useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
 import NoBooking from '../components/NoBooking';
+import { toast } from 'react-toastify';
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
@@ -34,6 +35,7 @@ export default function Booking() {
         
         const bookedLawyers = lawyers.filter(lawyer => newLawyersId.includes(lawyer.id));
         setBookedLawyers(bookedLawyers);
+        toast("Appointment cancelled successfully.");
     }
                     
 
