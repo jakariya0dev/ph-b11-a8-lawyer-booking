@@ -10,6 +10,7 @@ import {
 import Root from './components/Root.jsx';
 import Home from './pages/Home.jsx';
 import Profile from './pages/Profile.jsx';
+import Booking from './pages/Booking.jsx';
 
 
 const router = createBrowserRouter([
@@ -28,6 +29,15 @@ const router = createBrowserRouter([
         path: "profile/:id",
         Component: Profile,
       },
+      {
+        loader: () => fetch('/lawyers-data.json'),
+        path: "booking",
+        element: <Booking />,
+      },
+      {
+        path: "*",
+        Component: () => <div>404</div>,
+      }
     ],
   },
 ]);

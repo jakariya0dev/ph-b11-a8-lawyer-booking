@@ -20,10 +20,25 @@ export default function Profile() {
         })
     }, [id]);
 
-    return (
-        <div className='bg-white py-16 w-10/12 mx-auto'>
+    function handleClickAppointment(lawyer) {
+        
+        const stored = localStorage.getItem('lawyersId');
+        const lawyersId = stored ? JSON.parse(stored) : [];
 
-            <div className='bg-slate-200 py-5 rounded my-5'>
+        if (lawyersId.includes(lawyer.id)) {
+            alert('You have already booked an appointment with this lawyer.');
+        } else {
+            const newLawyersId = [...lawyersId, lawyer.id];
+            localStorage.setItem('lawyersId', JSON.stringify(newLawyersId));
+            alert('Appointment booked successfully.');
+        }
+    }
+
+
+    return (
+        <div className='bg-white py-5 w-10/12 mx-auto'>
+
+            <div className='bg-slate-200 py-5 rounded mb-5'>
                 <div className='text-center  text-slate-600 py-20 w-10/12 mx-auto'>
                     <h2 className='text-2xl font-bold'>Lawyer's Profile Details</h2>
                     <p>Our platform connects you with verified, experienced Lawyers across various specialities — all at your convenience.</p>
@@ -69,7 +84,7 @@ export default function Profile() {
                     <CiSquareAlert />
                     Due to high patient volume, we are currently accepting appointments for today only. We appreciate your understanding and cooperation.
                 </p>   
-                <button className='btn bg-amber-500 hover:bg-amber-600 text-white w-full border-0 rounded-full'>Book an Appointment</button>
+                <button onClick={() => handleClickAppointment(lawyer)} className='btn bg-amber-500 hover:bg-amber-600 text-white w-full border-0 rounded-full'>Book an Appointment</button>
             </div>
 
         </div>
