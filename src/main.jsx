@@ -12,49 +12,45 @@ import Home from './pages/Home.jsx';
 import Profile from './pages/Profile.jsx';
 import Booking from './pages/Booking.jsx';
 import Blogs from './pages/Blogs.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
 
 
 const router = createBrowserRouter(
   [
     {
       path: "/",
-      Component: Root,
+      element: <Root />,
+      errorElement: <ErrorPage />,
       children: [
         {
           index: true,
           path: "/",
-          loader: () => fetch('public/lawyers-data.json'),
-          Component: Home,
+          loader: () => fetch('lawyers-data.json'),
+          element: <Home />,
         },
         {
           path: "profile/:id",
-          Component: Profile,
+          element: <Profile />,
         },
         {
-          loader: () => fetch('/lawyers-data.json'),
+          loader: () => fetch('lawyers-data.json'),
           path: "booking",
           element: <Booking />,
         },
         {
           path: "blogs",
           element: <Blogs />,
-          loader: () => fetch('/blogs-data.json'),
+          loader: () => fetch('blogs-data.json'),
         },
         {
-          path: "*",
-          element: <Error />
-        }
+          path: "profile/*",
+          element: <div className='w-10/12 mx-auto'>404</div>,
+        },
       ],
     },
-    {
-      path: "*",
-      element: <Error />
-    }
   ]
 );
 
 createRoot(document.getElementById('root')).render(
-  <Suspense fallback={<div>Loading...</div>}>
     <RouterProvider router={router} />
-  </Suspense>
 )

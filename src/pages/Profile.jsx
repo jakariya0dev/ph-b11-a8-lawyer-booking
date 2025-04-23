@@ -33,10 +33,14 @@ export default function Profile() {
             const newLawyersId = [...lawyersId, lawyer.id];
             // store the new lawyersId in local storage
             localStorage.setItem('lawyersId', JSON.stringify(newLawyersId));
+            
+            
             // show success message
-            toast("Appointment booked successfully.");
+            toast(`Appointment booked successfully with ${lawyer.name}.`);
             // goto booking page
-            window.location.href = '/booking';
+            setTimeout(() => {
+                window.location.href = '/booking';
+            }, 2000);
         }
     }
 
