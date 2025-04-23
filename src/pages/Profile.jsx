@@ -20,7 +20,9 @@ export default function Profile() {
             setLawyer(lawyer);    
         })
     }, [id]);
-
+    
+    console.log(lawyer.availability);
+    
     function handleClickAppointment(lawyer) {
         
         const stored = localStorage.getItem('lawyersId');
@@ -77,7 +79,11 @@ export default function Profile() {
                         </div>
                         <div className='flex gap-1 mb-4'>
                             Availability: 
-                            {/* {lawyer.availability.map((item, index) => (<p key={index} className='text-xs text-amber-400 bg-amber-100 px-3 py-1 rounded-full border border-amber-300'>{item}</p>))} */}
+                            {
+                                lawyer.availability ? lawyer.availability.map((item, index) => (
+                                    <p key={index} className='text-xs text-amber-400 bg-amber-100 px-3 py-1 rounded-full border border-amber-300'>{item}</p>
+                                )) : ''
+                            }
                         </div>
                         <p>Consultaton Fee: <span className='text-red-600'>TK {lawyer.fee}</span></p>
                     </div>

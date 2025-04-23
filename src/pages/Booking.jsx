@@ -12,7 +12,6 @@ export default function Booking() {
     const [bookedLawyers, setBookedLawyers] = useState([]);
 
     const lawyers = useLoaderData();
-    console.log(lawyers);
 
     useEffect(() => {
        
