@@ -4,13 +4,15 @@ import { FaFacebookF } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa6";
+import logoFooter from './../assets/img/logo-footer.png'
+
 
 
 export default function Footer() {
     return (
         <div className='flex flex-col justify-center items-center bg-black text-white py-10 md:py-20'>
             <div className='flex items-center mb-5 gap-3 font-bold text-2xl'>
-                <img src="/img/logo-footer.png" className="logo" alt="logo" />Law.BD
+                <img src={logoFooter} className="logo" alt="logo" />Law.BD
             </div>
             <div className='flex flex-col md:flex-row justify-center items-center gap-5'>
                 <NavLink to="/" className={({isActive}) => isActive ? "font-bold text-slate-600" : ""}>Home</NavLink>
